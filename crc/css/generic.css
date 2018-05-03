@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #333;
+    color: aliceblue;
+}
+
+a{
+    color: aliceblue;
+}
+
+.back{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    color: aliceblue;
+    font-size: 1.5em;
+}
+
+.user{
+    position:absolute;
+    top:5px;
+    right:5px;
+    color:aliceblue;
+    font-size:1.5em;
+}
+
+h1{
+    text-align: center;
+}
+
+header{
+    background-color: #222;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+main{
+    margin: 0 10vw 0 10vw;
+}
+
+.post{
+    background-color: #222;
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+ul{
+    list-style: none;
+}
+
+ul ul{
+    list-style: none;
+    padding-left: 1em;
+    padding-top: .3em;
+}
+
+textarea:focus{
+    outline:none;
+}
+
+input:focus{
+    outline: none;
+}
+
+table{
+    background-color: #222;
+    text-align: left;
+    padding: 5px;
+}
+
+table input{
+    border: none;
+    color: #222;
+    background-color: aliceblue;
+    border: 2px solid #222;
+    padding: 2px;
+}
+
+table input:hover{
+    border: 2px solid green;
+}
+
+th{
+    border-bottom: 2px solid aliceblue;    
+}
+
+td{
+    padding-right: 5px;
+}
+
+.postForm{
+    padding:.5em;
+    background-color:#222;
+    width:auto;
+    display:inline-block;
+}
+
+textarea{
+    padding-top:.3em;
+    margin-left:1em;
+    background-color:#222;
+    border:none;
+    color:aliceblue;
+}
+
+.linkButton{
+    padding:5px;
+    border:2px solid aliceblue;
+    background-color:#222;
+    text-decoration:none;
+}

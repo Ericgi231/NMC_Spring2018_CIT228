@@ -1,0 +1,143 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*  use em for size or another relative measurement */
+    font-size: 1em; 
+    background-image: url('../media/background1.jpg');
+    /* size should be should be cover or contain */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer, header {
+    background-color: #A42213;
+    /* opacity is optional - if you have a background photo, it will allow the photo to show through the color */
+    opacity: 1;
+    text-align: center;
+}
+
+article {
+    /* use the settings shown below */
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 95vw;
+    margin: 2.5vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section {
+    flex: 1;
+    background-color: #fff; 
+    /*  use % for padding, height and width */
+    min-width: 20vw;
+    max-width: 95vw;
+    min-height: 20vh;
+    /* opacity is optional - if you have a background photo, it will allow the photo to show through the color */
+    opacity: 1;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    /*  use em for size or another relative measurement */
+    font-size: 2em;
+    color: #111;
+    text-align: center;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    /*  use em for size or another relative measurement */
+    font-size: 2em;
+    /*  use % for width */
+    width: 100%;
+    /* can use pixels for padding */
+    padding: 2px;
+    /* opacity is optional - if you have a background photo, it will allow the photo to show through the color */
+    opacity: 1;
+    /*  border-radius should be pixels */
+    border-radius: 1px;
+}
+
+nav{
+    margin: 0% 5% 0% 5%;
+    width: 90%;
+    height: auto;
+}
+
+nav ul {
+    background-color: #E8D5A0;
+    /* box-shadow settings can be whatever you want */
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    position: relative;
+    color: #111;
+    /* font-weight can be whatever you want */
+    font-weight: 900;
+}
+
+nav ul li {
+    display: inline-table;
+    margin: 10px;
+    padding: 5px;
+    color: #111;
+}
+
+nav ul li:hover {
+    color: #eee;
+    /*  font-size should be a relative measurement */
+    font-size: 1em;
+}
+
+nav ul li a {
+    display: block;
+    /* the padding can be in pixels */
+    padding: 2px;
+    color: #111;
+    text-decoration: none;
+}
+
+nav ul li:hover a {
+    color: #eee;
+    text-decoration: none;
+}
+
+nav ul li:hover > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul ul {
+    display: none;
+    background-color: #A42213;
+    /* the border color can be whatever you want */
+    border: 2px solid black;
+    border-radius: 0px;
+    padding: 0px;
+    position: absolute;
+    /*  font-size should be a relative measurement */
+    font-size: 1em;
+    z-index: 10;
+}
+
+nav ul ul li {
+    display: block;
+    /*  you can adjust the border top and bottom colors to whatever you want */
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+    text-align: center;
+    background: #A42213;
+}
+
+nav ul ul li a {
+    padding: 15px;
+    color: #111;
+}
+
+nav ul ul li a:hover {
+    background: #111;
+    color: #A42213;
+}

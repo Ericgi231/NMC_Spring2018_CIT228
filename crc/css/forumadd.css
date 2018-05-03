@@ -1,0 +1,104 @@
+
+	@import url('https://fonts.googleapis.com/css?family=Oswald');
+	body{
+		font-family: 'Oswald', sans-serif;
+		background-image:url('../media/trayofCups.jpg');
+		background-repeat:no-repeat;
+		background-position:center;
+		color:black;
+		font-size:14pt;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	form{
+		margin-left:0px;
+		background-color:#fdf8db;
+		width: 60%; 
+		height: 60%;
+		padding:0%;
+		box-shadow:10px 10px 10px  black;
+		opacity:.8;
+		align-content: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h1{
+	font-family: 'Oswald', sans-serif;
+		margin-top:10px;
+		margin-bottom:10px;
+		font-size:34pt;
+		text-align:auto;
+		color:darkblue;
+		font-weight:900;
+		text-shadow:2px 2px 1px white;
+		width:60%;
+		align-content: center;
+		margin-left: auto;
+		margin-right: auto;
+
+    }
+    main{
+        font-size:100%;
+		font-weight:100;
+		padding-top:15px;
+		padding-bottom:15px;
+		margin-left:10px;
+		color:#527ACC;
+		text-shadow:1px 1px 1px black;
+		align-content: center;
+		margin-left: auto;
+		margin-right: auto;  
+    }
+
+	.input{
+		font-size:200%;
+		font-weight:900;
+		padding-top:15px;
+		padding-bottom:15px;
+		margin-right:10px;
+		color:#527ACC;
+		text-shadow:1px 1px 1px black;
+		align-content: center;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+	.label{
+		text-align:right;
+        width:200px;
+		float:center;
+		padding-right:10px;
+		color:whitesmoke;
+		font-weight:900;
+		font-size:14pt;
+		vertical-align:text-top;
+	}
+	fieldset {
+		align-content: center;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #0e0b16;
+		margin-bottom: 1%;
+		padding:1%;
+		width:50%;
+	}
+	fieldset.inputButton{
+		font-size:14pt;
+		width: 100px; 
+		height: 30px;
+		font-size:12pt;
+		background-color: #EBF5FF;
+		color:black;
+	    font-family: 'Oswald', sans-serif;
+		font-weight:900;
+		margin-top:50px;
+		box-shadow:2px 2px 2px black;
+		align-content: left;
+	}
+	.formEntry{
+		text-align:center;
+		width:150px;
+		font-size:14pt;
+		color:black;
+	}

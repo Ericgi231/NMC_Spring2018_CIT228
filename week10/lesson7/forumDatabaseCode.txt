@@ -1,0 +1,14 @@
+CREATE TABLE topics (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR (150),
+    original_poster VARCHAR (150),
+    time_stamp DATETIME 
+);
+
+CREATE TABLE posts (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    topic INT NOT NULL,
+    original_poster VARCHAR (150),
+    txt VARCHAR (400),
+    time_stamp DATETIME
+);

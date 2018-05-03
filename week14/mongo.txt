@@ -1,0 +1,80 @@
+> use employee                                                                                    
+switched to db employee                                                                           
+> db.employee.insert({'EmployeeId':1,'FirstName':'Eric','LastName':'Grant'})                      
+WriteResult({ "nInserted" : 1 })                                                                  
+> db.employee.insert({'EmployeeId':2,'FirstName':'Nicole','LastName':'Andress'})                  
+WriteResult({ "nInserted" : 1 })                                                                  
+> db.employee.insert({'EmployeeId':3,'FirstName':'Kat','LastName':'Williams'})                    
+WriteResult({ "nInserted" : 1 })
+
+> db.employee.find()                                                                              
+{ "_id" : ObjectId("5adf517f7009372306e02d1c"), "EmployeeId" : 1, "FirstName" : "Eric", "LastName"
+ : "Grant" }                                                                                      
+{ "_id" : ObjectId("5adf51917009372306e02d1d"), "EmployeeId" : 2, "FirstName" : "Nicole", "LastNam
+e" : "Andress" }                                                                                  
+{ "_id" : ObjectId("5adf51a97009372306e02d1e"), "EmployeeId" : 3, "FirstName" : "Kat", "LastName" 
+: "Williams" }     
+
+> db.employee.find().forEach(printjson)                                                           
+{                                                                                                 
+        "_id" : ObjectId("5adf517f7009372306e02d1c"),                                             
+        "EmployeeId" : 1,                                                                         
+        "FirstName" : "Eric",                                                                     
+        "LastName" : "Grant"                                                                      
+}                                                                                                 
+{                                                                                                 
+        "_id" : ObjectId("5adf51917009372306e02d1d"),                                             
+        "EmployeeId" : 2,                                                                         
+        "FirstName" : "Nicole",                                                                   
+        "LastName" : "Andress"                                                                    
+}                                                                                                 
+{                                                                                                 
+        "_id" : ObjectId("5adf51a97009372306e02d1e"),                                             
+        "EmployeeId" : 3,                                                                         
+        "FirstName" : "Kat",                                                                      
+        "LastName" : "Williams"                                                                   
+}            
+
+> db.employee.find({EmployeeId:2})                                                                
+{ "_id" : ObjectId("5adf51917009372306e02d1d"), "EmployeeId" : 2, "FirstName" : "Nicole", "LastName" : "Andress" }                 
+
+> db.employee.find({EmployeeId:{$gt:2}})                                                          
+{ "_id" : ObjectId("5adf51a97009372306e02d1e"), "EmployeeId" : 3, "FirstName" : "Kat", "LastName" : "Williams" }  
+
+> db.employee.find({FirstName:/^E/})                                                              
+{ "_id" : ObjectId("5adf517f7009372306e02d1c"), "EmployeeId" : 1, "FirstName" : "Eric", "LastName" : "Grant" }    
+
+> db.employee.find({},{EmployeeId:1,FirstName:1})                                                 
+{ "_id" : ObjectId("5adf517f7009372306e02d1c"), "EmployeeId" : 1, "FirstName" : "Eric" }          
+{ "_id" : ObjectId("5adf51917009372306e02d1d"), "EmployeeId" : 2, "FirstName" : "Nicole" }        
+{ "_id" : ObjectId("5adf51a97009372306e02d1e"), "EmployeeId" : 3, "FirstName" : "Kat" }    
+
+> db.employee.count()                                                                                               
+3     
+
+> db.employee.find().sort({LastName:-1})                                                          
+{ "_id" : ObjectId("5adf51a97009372306e02d1e"), "EmployeeId" : 3, "FirstName" : "Kat", "LastName" : "Williams" }                                                                                    
+{ "_id" : ObjectId("5adf517f7009372306e02d1c"), "EmployeeId" : 1, "FirstName" : "Eric", "LastName" : "Grant" }                                                                                      
+{ "_id" : ObjectId("5adf51917009372306e02d1d"), "EmployeeId" : 2, "FirstName" : "Nicole", "LastName" : "Andress" }       
+
+> db.employee.updateMany({},{$set:{employmentDt: new Date()}})                                                      
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }   
+
+> db.employee.find()                                                                                                
+{ "_id" : ObjectId("5adf517f7009372306e02d1c"), "EmployeeId" : 1, "FirstName" : "Eric", "LastName" : "Grant", "emplo
+ymentDt" : ISODate("2018-04-24T15:59:52.700Z") }                                                                    
+{ "_id" : ObjectId("5adf51917009372306e02d1d"), "EmployeeId" : 2, "FirstName" : "Nicole", "LastName" : "Andress", "e
+mploymentDt" : ISODate("2018-04-24T15:59:52.700Z") }                                                                
+{ "_id" : ObjectId("5adf51a97009372306e02d1e"), "EmployeeId" : 3, "FirstName" : "Kat", "LastName" : "Williams", "emp
+loymentDt" : ISODate("2018-04-24T15:59:52.700Z") }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+body{
+    background-image: url("../media/waterfall.jpg");
+    background-repeat: no-repeat;
+    background-size: fill;
+    color: #eee;
+    text-shadow: -1px 0 #222, 0 1px #222, 1px 0 #222, 0 -1px #222;
+    font-size: 1.5rem;
+    font-family: Sans-serif;
+}
+
+#formBox{
+    text-align: center;
+}
+
+form{
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+}
+
+fieldset{
+    border: 2px dotted #eee;
+}
+
+#req{
+    margin-top: -15px;
+    color: #D00000;
+}
+
+legend{
+    font-size: 4rem;
+}
+
+.formLabel{
+    text-align:right;
+	width:30%;
+	float:left;
+	margin-bottom:0px;
+    margin-top:0px;
+    margin-right: 5%;
+}
+
+.formEntry{
+    text-align:left;
+    width:60%;
+    font-size: 1.5rem;
+    border: 2px solid #222;
+    background-color: #eee;
+}
+
+#butts{
+    display: flex;
+    justify-content: center;
+}
+
+#butts input{
+    font-size: 1.5rem;
+    border: 2px solid #222;
+    margin: 2.5%;
+}
+
+select:focus, input:focus, textarea:focus{
+    background-color: #efe;
+    outline: none;
+}
+
+.error{
+    color: #D00000;
+    position: relative;
+    left: 35%;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Database</title>
+</head>
+<body>
+    <h1>Database Design</h1>
+    <p><strong>Customer:</strong> custID(PK), zipCode(FK), fName, lName, jobTitle, busPhone, mobPhone, faxNum, street, salesPerson(FK, employeeID), email, webpage</p>
+    <p><strong>Employee:</strong> employID(PK), zipCode(FK), fName, lName, jobTitle, busPhone, mobPhone, homPhone, faxNum, email, startDate, salaried, wages, street</p>    
+    <p><strong>ZipCodes:</strong> zipCode(PK), city, state, country</p>
+
+    <h1>MySQL Commands</h1>
+    <h2>Part #1</h2>
+    <pre>
+        CREATE DATABASE company;
+    </pre>
+
+    <h2>Part #2</h2>
+    <pre>
+        USE company;
+
+        CREATE TABLE Customer(
+            custID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            fName VARCHAR(50),
+            lName VARCHAR(50),
+            jobTitle VARCHAR(50),
+            busPhone VARCHAR(15),
+            mobPhone VARCHAR(15),
+            faxNum VARCHAR(25),
+            street VARCHAR(50),
+            zipCode INT,
+            salesPerson INT,
+            email VARCHAR(50),
+            webpage VARCHAR(50)
+        );
+        
+        CREATE TABLE Employee(
+            employeeID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            fName VARCHAR(50),
+            lName VARCHAR(50),
+            jobTitle VARCHAR(50),
+            busPhone VARCHAR(15),
+            mobPhone VARCHAR(15),
+            homPhone VARCHAR(15),
+            faxNum VARCHAR(25),
+            street VARCHAR(50),
+            zipCode INT,
+            email VARCHAR(50),
+            webpage VARCHAR(50),
+            startDate DATE,
+            salaried BOOLEAN,
+            wages INT
+        );
+        
+        CREATE TABLE ZipCodes(
+            zipCode INT NOT NULL PRIMARY KEY,
+            city VARCHAR(50),
+            state VARCHAR(50),
+            country VARCHAR(50)
+        );
+    </pre>
+
+    <h2>Part #3</h2>
+    <pre>
+        USE company;
+
+        INSERT INTO employee(fName, lName, jobTitle, busPhone, mobPhone, homPhone, faxNum, street, zipCode, email, webpage, startDate, salaried, wages) VALUES ("John", "Cracks", "Pro Moth", "(231)102-5123", "(231)326-3244", null, "1732573", "Tolc Street", 17352, "TrueLiar43@gmail.com", "LieTo.me", "2017-06-15", 0, 5000);
+        INSERT INTO employee(fName, lName, jobTitle, busPhone, mobPhone, homPhone, faxNum, street, zipCode, email, webpage, startDate, salaried, wages) VALUES ("Mason", "Ploon", "Business Man", "(231)102-1923", "(231)183-6982", null, null, "Swamp Road", 17423, "MegaMom@ymail.com", null, "2014-02-20", 1, 7000);
+        INSERT INTO employee(fName, lName, jobTitle, busPhone, mobPhone, homPhone, faxNum, street, zipCode, email, webpage, startDate, salaried, wages) VALUES ("Alice", "Mallice", "Donut Runner", "(231)104-1924", "(231)934-1934", "(231)192-3952", "1932634", "Magic Boy Ave", 65432, null, "AbsoluteLadMagic.com", "2013-07-2", 1, 6000);
+        INSERT INTO employee(fName, lName, jobTitle, busPhone, mobPhone, homPhone, faxNum, street, zipCode, email, webpage, startDate, salaried, wages) VALUES ("Ron", "Toller", "Spider Queen", "(231)103-1035", "(231)283-2953", "(231)284-1925", null, "Never Land Lane", 27345, "RonToller72@gmail.com", null, "2016-11-29", 1, 3000);
+        INSERT INTO employee(fName, lName, jobTitle, busPhone, mobPhone, homPhone, faxNum, street, zipCode, email, webpage, startDate, salaried, wages) VALUES ("Kate", "Mole", "Kill Machine", "(231)013-1935", "(231)293-5432", null, "1029524", "Road Street", 83457, "MoleGod92@TheMolePeopleWeekly.truth", "TheMolePeopleWeekly.truth", "2010-09-11", 1, 12000);
+
+        INSERT INTO customer(fName, lName, jobTitle, busPhone, mobPhone, faxNum, street, zipCode, salesPerson, email, webpage) VALUES ("Mark", "Tompson", "Pool Boy", "(231)102-1024", "(231)524-1462", "2563467", "Blast Ave", 65432, 1, "xXDogLoveManXx@hotmail.com", null);
+        INSERT INTO customer(fName, lName, jobTitle, busPhone, mobPhone, faxNum, street, zipCode, salesPerson, email, webpage) VALUES ("Gort", "Gorto", "Eternal King", "(231)214-2945", "(231)155-2355", null, "Saphire Street", 17423, 5, "LosersNeverDie@hotmail.com", null);
+        INSERT INTO customer(fName, lName, jobTitle, busPhone, mobPhone, faxNum, street, zipCode, salesPerson, email, webpage) VALUES ("Biggy", "Wo'le", "Pit Manager", "(231)920-2035", "(231)120-1232", null, "Ruby Road", 17352, 4, "ThePitCalls@TheRocks.com", "TheRocks.com");
+        INSERT INTO customer(fName, lName, jobTitle, busPhone, mobPhone, faxNum, street, zipCode, salesPerson, email, webpage) VALUES ("Manny", "Crux", "Cream Cheese Spreader", "(231)103-3525", "(231)535-5535", null, "Tupac Street", 27345, 2, "BlastMaster6346@ymail.com", null);
+        INSERT INTO customer(fName, lName, jobTitle, busPhone, mobPhone, faxNum, street, zipCode, salesPerson, email, webpage) VALUES ("Troy", "Baka", "Class Clown", "(231)283-5246", "(231)666-6666", "1029536", "Street Hams", 83457, 1, "PleaseNeverTalkToMe@gmail.com", "VoiceOfAll.com");
+        
+        INSERT INTO zipcodes(zipCode, city, state, country) VALUES (65432, "Bort", "Bortzy", "Bortolia");
+        INSERT INTO zipcodes(zipCode, city, state, country) VALUES (17352, "Montree", "Coldland", "Canada");
+        INSERT INTO zipcodes(zipCode, city, state, country) VALUES (83457, "Detroit", "Texas", "America");
+        INSERT INTO zipcodes(zipCode, city, state, country) VALUES (17423, "Hawaii", "Grazni", "China");
+        INSERT INTO zipcodes(zipCode, city, state, country) VALUES (27345, "Nop", "Fitzy", "Australia");
+    </pre>
+
+    <h2>Part #4</h2>
+    <pre>
+        USE company;
+
+        SELECT * FROM customer;
+        SELECT * FROM employee;
+        SELECT * FROM zipcodes;
+    </pre>
+
+    <h2>Part #5</h2>
+    <pre>
+        USE company;
+
+        SELECT * 
+        FROM customer as c 
+        INNER JOIN employee as e
+	        ON c.custID = e.employeeID
+    </pre>
+
+    <h2>Part #6</h2>
+    <pre>
+        USE company;
+
+        SELECT *
+        FROM customer
+            ORDER BY salesPerson
+    </pre>
+
+    <h2>Part #7</h2>
+    <pre>
+        USE company;
+
+        SELECT *
+        FROM customer
+            WHERE salesPerson = 2
+    </pre>
+
+    <h2>Part #8</h2>
+    <pre>
+        USE company;
+
+        UPDATE employee SET wages = 80000 WHERE employeeID = 2;
+        UPDATE employee SET wages = 30000 WHERE employeeID = 4;
+    </pre>
+
+    <h2>Part #9</h2>
+    <pre>
+        USE company;
+
+        SELECT *
+        FROM employee
+    </pre>
+</body>
+</html>
